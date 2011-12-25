@@ -14,7 +14,7 @@ function render_gwf_enqueue()	{
 	$num = 0;
   	while ( $num < 4 )	{
   		$num++;
-  		if ( $gwf[ $num ][ 'active' ] = 'checked' )	:
+  		if ( $gwf[ $num ][ 'active' ] == 'checked' )	:
 			$gwf_import .= $gwf[ $num ][ 'saved' ] . '|';
 		endif;
 	}
