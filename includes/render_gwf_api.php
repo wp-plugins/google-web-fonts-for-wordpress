@@ -28,7 +28,7 @@ function get_google_fonts( $sort, $api_key )	{
 		
 		}
 		
-		set_transient( 'gwf_raw_' . $sort, $font_list );
+		set_transient( 'gwf_raw_' . $sort, $font_list, 60 * 60 * 24 );
 
 	endif;
 
