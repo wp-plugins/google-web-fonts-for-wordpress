@@ -17,7 +17,7 @@ if ( ! is_admin() )	:
 elseif ( is_admin() )	:
 
 	# Get options
-	include_once( 'includes/render_gwf_get_options.php' );
+	include( 'includes/render_gwf_get_options.php' );
 
 	# Install / Uninstall actions
 	include_once( 'includes/render_gwf_install.php' );
