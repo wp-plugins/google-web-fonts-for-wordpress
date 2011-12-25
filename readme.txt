@@ -49,7 +49,7 @@ When styling a logo link with the class of .logo, I might add the #header id if 
 * Save options in theme_mods
 
 = 2.0.1 = 
-* Set font api transiet timeout to 24 hours.
+* Set font api transient timeout to 24 hours.
 
 = 2.0.2 = 
 * Update saved font conditional.
