@@ -3,7 +3,7 @@ Contributors: jeffsebring
 Tags: fonts, typography, google web fonts
 Requires at least: 3.2.1
 Tested up to: 3.3
-Stable tag: 2.0.2
+Stable tag: 2.3
 
 == Description ==
 Google Web Fonts for WordPress is a plugin that makes it easy to import fonts for use in theme stylesheets. Choose up to three of over 350 free fonts made available from the [Google Web Font Directory](http://www.google.com/webfonts).
@@ -11,9 +11,6 @@ Google Web Fonts for WordPress is a plugin that makes it easy to import fonts fo
 = More Info =
 
 * [Google Web Fonts for WordPress Plugin Home](http://jeffsebring.com/wordpress/plugins/google-web-fonts)
-* [Typographic Web Design](http://jeffsebring.com/quotes/typographic-web-design/)
-* [Jeff's WordPress Blog](http://jeffsebring.com)
-* [Follow Jeff on Twitter](http://twitter.com/jeffsebring)
 
 == Installation ==
 
@@ -48,8 +45,7 @@ When styling a logo link with the class of .logo, I might add the #header id if 
 * Allow enabling/disabling of fonts.
 * Save options in theme_mods
 
-= 2.0.1 = 
-* Set font api transient timeout to 24 hours.
 
-= 2.0.2 = 
-* Update saved font conditional.
+= 2.3 =
+* Bug Fixes
+* Added initial Render Framework support
