@@ -3,7 +3,7 @@
 Plugin Name: Google Web Fonts for WordPress
 Plugin URI: http://jeffsebring.com/wordpress/plugins/google-web-fonts/
 Description: Choose from any font in the Google Web Font Library for use in your theme's CSS.
-Version: 2.0.2
+Version: 2.0.3
 Author: Jeff Sebring
 Author URI: http://jeffsebring.com
 License: GPLv2
