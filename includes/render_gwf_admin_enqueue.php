@@ -9,12 +9,11 @@ function render_gwf_admin_enqueue()	{
 	
 	# Get global options var
 	global $gwf;
+   $gwf_import = '';
 	
 	# Loop through saved fonts and add to string var
-	$num = 0;
-  	while ( $num < 4 )	{
-  		$num++;
-		$gwf_import .= $gwf[ $num ][ 'saved' ] . '|';
+   for ( $i = 1; $i <= 3; $i++ )	{
+		$gwf_import .= $gwf[ $i ][ 'saved' ] . '|';
 	}
 	$gwf_import = rtrim( $gwf_import, '|' );
 	if ( ! empty( $gwf_import ) )	:
