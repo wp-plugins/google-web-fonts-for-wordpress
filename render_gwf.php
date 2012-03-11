@@ -3,7 +3,7 @@
 Plugin Name: Google Web Fonts for WordPress
 Plugin URI: http://jeffsebring.com/wordpress/plugins/google-web-fonts/
 Description: Choose from any font in the Google Web Font Library for use in your theme's CSS.
-Version: 2.0.3
+Version: 2.0.4
 Author: Jeff Sebring
 Author URI: http://jeffsebring.com
 License: GPLv2
@@ -22,7 +22,6 @@ elseif ( is_admin() )	:
    # Install / Uninstall actions
    include_once( 'includes/render_gwf_install.php' );
    register_activation_hook( __FILE__, 'render_gwf_activate' );
-   register_deactivation_hook( __FILE__, 'render_gwf_activate' );
 
    # Enqueue fonts for preview on options page
    include_once( 'includes/render_gwf_admin_enqueue.php' );
