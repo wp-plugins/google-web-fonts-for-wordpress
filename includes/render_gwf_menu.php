@@ -10,21 +10,29 @@ function render_gwf_menu()	{
 	
 	global $gwf;
 	global $gwf_saved;
+   
+   $render_fonts[ 1 ] = 'Logo';
+   $render_fonts[ 2 ] = 'Headings';
+   $render_fonts[ 3 ] = 'Text';
+
 	include_once( 'render_gwf_api.php' );
 	$font_list = get_google_fonts( 'alpha', 'AIzaSyCP1Zewk9Ba3XboLIjPWdzh6yXcxxxoNRE');
-	
-  	$num = 0;
-  	while ( $num < 3 )	{
-  		$num++; 
-		$gwf_import .= $gwf[ $num ][ 'saved' ] . '|';
-		$gwf_save[] = $gwf[ $num ][ 'id' ];
-		$gwf_save[] = 'gwf_font_' . $num . '_activated';
+   $gwf_import = '';
+
+
+   for ( $i = 1; $i <= 3; $i++ )	{
+		$gwf_import .= $gwf[ $i ][ 'saved' ] . '|';
+		$gwf_save[] = $gwf[ $i ][ 'id' ];
+		$gwf_save[] = 'gwf_font_' . $i . '_activated';
 	}
 	$gwf_import = rtrim( $gwf_import, '|' );
-	
+   
+
 	if ( $_GET['page'] == 'render_gwf' ) :
-		if ( 'Save Changes' == $_REQUEST['submit'] )	:
-			
+		if ( ! isset( $_REQUEST['submit'] ) || ( $_REQUEST['submit'] != 'Save Changes' ) )	:
+         $submitted = null;
+      else  :
+			$submitted = $_REQUEST['submit'];
 			check_admin_referer( 'render_gwf_admin' );
 			add_action('render_updated', 'render_saved_message');
 			foreach ( $gwf_save as $save )	{
@@ -105,7 +113,7 @@ function render_gwf_menu()	{
 	<h2><?php echo __( 'Google Web Fonts Settings' ); ?></h2>
 <?php do_action( 'render_updated' ); ?>	
 	<form method="post">
-		<legend><p>Import up to three of over 350 free fonts available from the <a target="_blank" href="http://www.google.com/webfonts">Google Web Font Directory</a>.</p><p>After saving your font selections, add the supplied properties to the desired elements in your theme's stylesheet.</p><p>If you would like help with your typography, <a href="http://jeffsebring.com/quotes/typographic-web-design/">request a quote</a> at my website.</p></legend>
+		<legend><p>Import up to three of over 350 free fonts available from the <a target="_blank" href="http://www.google.com/webfonts">Google Web Font Directory</a>.</p><p>After saving your font selections, add the supplied properties to the desired elements in your theme's stylesheet.</p><?php if ( get_theme_mod( 'framework' ) == 'render' ) : echo '<strong style="color: #093EA2;">OOOhhh, You\'re using the <a style="color: #f00;" href="http://renderwp.com">Render Theme Framework</a>. We\'ll add your fonts automagically.</strong>'; endif; ?></legend>
 		<?php wp_nonce_field( 'render_gwf_admin' ); ?>
 		<table class="widefat" width="840px">
 		  <col style="text-align:left" width="200px" />
@@ -122,10 +130,10 @@ function render_gwf_menu()	{
 	  </thead>
 	  <tbody>
 	  <?php
-	  	$num = 0;
-	  	while ( $num < 3 )	{
-	  		$num++; 
-	  		if ( 'Save Changes' == $_REQUEST['submit'] )	:
+	  	
+	  	for ( $num = 1; $num <= 3; $num++ )	{
+
+	  		if ( 'Save Changes' == $submitted )	:
 	  		
 	  			$display_active = $_REQUEST[ 'gwf_font_' . $num . '_activated' ];
 	  			$display_saved_font = $_REQUEST[ $gwf[ $num ][ 'id' ] ];
@@ -137,7 +145,7 @@ function render_gwf_menu()	{
 	  		endif; 
 	  		?>
 	  		<tr>
-	  		<td>
+	  		<td><?php if ( get_theme_mod( 'framework' ) == 'render' ) : echo '<strong style="display: block; margin-bottom: .5em;">' . $render_fonts[ $num ] . " Font</strong>"; endif; ?>
 				<select name="<?php echo $gwf[ $num ][ 'id' ]; ?>" id="<?php echo $gwf[ $num ][ 'id' ]; ?>">
 					<?php foreach ( $font_list as $font ) { ?>
 						<option value="<?php echo $font; ?>"<?php if ( $display_saved_font === $font ) : echo ' selected'; endif; ?>><?php echo $font ; ?></option>
@@ -152,7 +160,7 @@ function render_gwf_menu()	{
 	  ?>
 	  </tbody>
 </table>
-	<?php echo get_submit_button(); ?>
+	<?php submit_button(); ?>
 	</form>
 	</div>
 <?php
