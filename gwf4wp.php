@@ -36,8 +36,23 @@ class GWF4WP
 
 		$this->mods = get_theme_mods();
 
+		add_action( 'plugins_loaded', array( $this, 'textdomain' ) );
+
 		if ( is_admin() ) add_action( 'customize_register', array( $this, 'customize' ) );
 		else add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_fonts' ) );
+
+	}
+
+	/**
+	 * Plugin Textdomain
+	 *
+	 * @since 	qwf4wp 3.0
+	 * @access	public
+	 */
+	public function textdomain()
+	{
+
+		load_plugin_textdomain( 'gwf4wp', false, dirname( plugin_basename( __FILE__ ) ) ); 
 
 	}
 
@@ -93,31 +108,28 @@ class GWF4WP
 		if ( ! is_array( $font_list ) )
 		 	$font_list = $this->_get_fonts();
 
+		if ( ! $font_list ) return;
+ 
 		$wp_customize->add_section( 'gwf4wp', array(
-			'title' => 'Google Fonts',
+			'title' => __( 'Google Web Fonts', 'gwf4wp' ),
 			'priority' => 35,
 		) );
 
 		for ( $num = 1; $num <= 5; $num++ ) :
 
-			// Text color default
 			$wp_customize->add_setting( 'gwf_font_' . $num, array(
 				'default' => 'none',
-				'transport' => 'postMessage',
 				'capability' => 'edit_theme_options'
 			) );
 
-			// Text color control
 			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gwf_font_' . $num, array(
-				'label' => 'Font ' . $num,
+				'label' => __( 'Font', 'gwf4wp' ) . ' ' . $num,
 				'section' => 'gwf4wp',
 				'type' => 'select',
 				'choices' => $font_list,
 				'settings' => 'gwf_font_' . $num,
 				'priority' => $num
 			) ) );
-
-			$wp_customize->get_setting( 'gwf_font_' . $num )->transport = 'postMessage';
 
 		endfor;
 
@@ -133,9 +145,9 @@ class GWF4WP
 	private function _get_fonts()
 	{
 
-		// $font_list = get_transient( 'gwf4wp_array_' );
+		$font_list = get_transient( 'gwf4wp_list_' );
 
-		// if ( $font_list ) return $font_list;
+		if ( $font_list ) return $font_list;
 
 		$raw = @wp_remote_get( 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCP1Zewk9Ba3XboLIjPWdzh6yXcxxxoNRE&sort=alpha' );
 
