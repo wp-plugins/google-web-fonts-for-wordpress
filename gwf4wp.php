@@ -8,7 +8,7 @@ Author: Jeff Sebring
 Author URI: http://jeffsebring.com
 License: GPLv3
 
-Copyright (C) 2013 Jeff Sebring
+Copyright (C) 2013 Jeff Sebring <http://jeffsebring.com>
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
