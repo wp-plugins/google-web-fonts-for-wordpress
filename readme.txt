@@ -3,7 +3,7 @@ Contributors: jeffsebring
 Tags: fonts, typography, google web fonts
 Requires at least: 3.5
 Tested up to: 3.5
-Stable tag: 3.0
+Stable tag: 3.0.1
 
 == Description ==
 Select up to 5 fonts from the [Google Web Font Directory](http://www.google.com/webfonts) to make available for use in stylesheets.
