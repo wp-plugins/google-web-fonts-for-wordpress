@@ -1,22 +1,24 @@
-=== Google Web Fonts for WordPress ===
-Contributors: jeffsebring
-Tags: fonts, typography, google web fonts
-Requires at least: 3.5
-Tested up to: 3.5
-Stable tag: 3.0
+Google Web Fonts for WordPress
+=====================
 
-== Description ==
-Select up to 5 fonts from the [Google Web Font Directory](http://www.google.com/webfonts) to make available for use in stylesheets.
+* Contributors: jeffsebring
+* Tags: fonts, typography, google web fonts
+* Requires at least: 3.5
+* Tested up to: 3.5
+* Stable tag: 3.0
 
-= More Info =
+** Select up to 5 fonts from the [Google Web Font Directory](http://www.google.com/webfonts) to make available for use in stylesheets. **
 
-** This plugin does not automatically change your fonts, only enqueue's the font import stylesheet. Edit your theme or child theme stylesheet to use your chosen fonts **
+###More Info
+
+* This plugin does not automatically change your fonts, only enqueue's the font import stylesheet. Edit your theme or child theme stylesheet to use your chosen fonts *
 
 [Google Web Fonts for WordPress Plugin Home](http://jeffsebring.com/wordpress/plugins/google-web-fonts)
 
 For more control over imported fonts, read [How to Use Web Fonts with WordPress](http://jeffsebring.com/2012/how-to-use-web-fonts-with-wordpress/).
 
-== Installation ==
+Installation
+-------------
 
 1. Upload and activate Google Web Fonts for WordPress.
 2. Navigate to the Theme Customizer.
@@ -24,7 +26,8 @@ For more control over imported fonts, read [How to Use Web Fonts with WordPress]
 4. Add the provided css font-family properties code to your theme or child theme stylesheet.
 
 
-== Frequently Asked Questions ==
+Frequently Asked Questions
+-----------------------------------
 
 = My font is not showing up =
 
@@ -38,9 +41,11 @@ When styling a logo link with the class of .logo, I might add the #header id if 
     }
 
 
-== Changelog ==
+Changelog
+--------------
 
-= 3.0 =
+###3.0
+
 * Another Rebuild!
 * License update to GPLv3
 * Uses Customizer UI
@@ -48,22 +53,27 @@ When styling a logo link with the class of .logo, I might add the #header id if 
 * Register activation hook to remove theme mods no longer used
 * Updated Read Me to emphasize that plugin only enqueues import stylesheet with chosen fonts
 
-= 2.0 =
+###2.0
+
 * Complete rebuild
 * List of fonts in dropdown, saved as transients from the Developer API.
 * Font preview link to Google Web Font Directory info for the font.
 * Allow enabling/disabling of fonts.
 * Save options in theme_mods
 
-= 2.0.1 = 
+###2.0.1
+
 * Set font api transiet timeout to 24 hours.
 
-= 2.0.2 =
+###2.0.2
+
 * Bug Fixes
 * Added initial Render Framework support
 
-= 2.0.3 =
+###2.0.3
+
 * Readme Updated
 
-= 2.0.4 =
+###2.0.4
+
 * Remove deactivation hook
