@@ -21,14 +21,6 @@ class GWF4WP
 	 */
 	public $mods = array();
 
-	/**
-	 * Saved Fonts
-	 *
-	 * @since 	qwf4wp 3.0
-	 * @access	public
-	 */
-	public $fonts = array();
-
 	public function __construct()
 	{
 
