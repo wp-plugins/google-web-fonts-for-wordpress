@@ -7,11 +7,11 @@ Google Web Fonts for WordPress
 * Tested up to: 3.5
 * Stable tag: 3.0
 
-** Select up to 5 fonts from the [Google Web Font Directory](http://www.google.com/webfonts) to make available for use in stylesheets. **
+**Select up to 5 fonts from the [Google Web Font Directory](http://www.google.com/webfonts) to make available for use in stylesheets.**
 
 ###More Info
 
-* This plugin does not automatically change your fonts, only enqueue's the font import stylesheet. Edit your theme or child theme stylesheet to use your chosen fonts *
+*This plugin does not automatically change your fonts, only enqueue's the font import stylesheet. Edit your theme or child theme stylesheet to use your chosen fonts.*
 
 [Google Web Fonts for WordPress Plugin Home](http://jeffsebring.com/wordpress/plugins/google-web-fonts)
 
@@ -29,7 +29,7 @@ Installation
 Frequently Asked Questions
 -----------------------------------
 
-= My font is not showing up =
+###My font is not showing up
 
 If you have added the font family rule to the correct element in your stylesheet, try adding some specificity.
 
